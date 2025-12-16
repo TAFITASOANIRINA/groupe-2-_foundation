@@ -1,0 +1,84 @@
+@media screen and (max-width: 768px) {
+
+    [style*="float"] {
+        float: none !important;
+    }
+
+
+    header, nav, section, article {
+        text-align: center;
+    }
+
+    article {
+        padding: 20px !important;
+    }
+}
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: firebrick;
+        padding: 10px 15px;
+        display: block;
+        font-weight: bold;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: firebrick;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    /* Animation du hamburger en croix */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .menu {
+            width: 100%;
+            flex-direction: column;
+            display: none;
+        }
+
+        .menu.show {
+            display: flex;
+        }
+
+        .menu li a {
+            padding: 15px;
+            text-align: center;
+        }
+    }
